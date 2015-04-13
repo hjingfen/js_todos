@@ -13,7 +13,8 @@ var task = function() {
         new_template.classList.remove('hide');
         new_template.id = id;
         new_template.getElementsByClassName('item')[0].innerHTML = getInputValue();
-        document.getElementById('todo_lists').appendChild(new_template);
+        var latestTask = document.getElementById(tasks.length == 0 ? 'template' : tasks[0].id);
+        document.getElementById('todo_lists').insertBefore(new_template, latestTask);
         tasks.unshift({id: id, name: getInputValue(), finished: false});
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
