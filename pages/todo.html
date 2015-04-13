@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>
+            todos
+        </title>
+        <script type="text/javascript" src="../lib/bootstrap/bootstrap.js"></script>
+        <script type="text/javascript" src="../js/todo.js"></script>
+        <script type="text/javascript" src="../lib/underscore/underscore-min.js"></script>
+        <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../css/todo.css">
+    </header>
+    <body>
+        <div class="container">
+            <h1 class="page-header text-center">Todos</h1>
+            <div class="list">
+                <span id="arrow" href="javascript:{}" class="icon-all">>></span>
+                <input id="todo_input" class="input" placeholder="What needs to be done?">
+            </div>
+            <ul id="todo_lists" class="list">
+                <li id="template" class="unfinished hide" >
+                    <span class="del-btn" onclick="task.delete(this)"></span>
+                    <span href="javascript:{}" class="icon-item" onclick="task.finish(this)">✔</span>
+                    <span class="item"></span>
+                </li>
+            </ul>
+            <div id="footer" class="list">
+                <span class="unfinished_count">
+                    <span id="leftCount"></span>
+                    &nbsp;item left
+                </span>
+                <span id="allFinished" class="static_text">
+                    <strong>All</strong>
+                    &nbsp;Active Completed
+                </span>
+                <a href="javascript:{}" id="clearComplete" class="clearComplete" onclick="task.clear()">
+                    Clear completed&nbsp;(
+                    <span id="completeCount"></span>
+                    )
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
