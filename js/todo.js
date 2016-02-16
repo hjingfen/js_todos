@@ -1,4 +1,5 @@
 window.onload = function () {
+  alert('qwe');
     task.listen_enter();
     localStorage.setItem('tasks', localStorage.getItem('tasks') || '[]');
     task.init();
